@@ -10,7 +10,8 @@
     <form method="post">
         <textarea name="transcript" rows="15" cols="80" placeholder="Paste conversation transcript here..."></textarea>
         <br>
-        <button type="submit">Generate Summary</button>
+        <button type="submit" name="action" value="summarize">Generate Summary</button>
+        <button type="submit" name="action" value="diagnose">Suggest Diagnosis</button>
     </form>
     {% if summary %}
     <div class="summary-container">
@@ -19,6 +20,12 @@
             <button onclick="copySummary()">Copy to Clipboard</button>
         </div>
         <div id="summaryContent">{{ summary | safe }}</div>
+    </div>
+    {% endif %}
+    {% if diagnosis %}
+    <div class="summary-container">
+        <h2>Suggested Diagnosis:</h2>
+        <div>{{ diagnosis | safe }}</div>
     </div>
     {% endif %}
 <script>
