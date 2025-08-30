@@ -1,0 +1,69 @@
+/* General body styling */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    margin: 0;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Styling for the main heading */
+h1 {
+    color: #005f73;
+}
+
+/* Styling for the form container */
+form {
+    width: 100%;
+    max-width: 700px;
+    margin-bottom: 30px;
+}
+
+/* Styling for the text input box */
+textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box; /* Important for padding to work correctly */
+    margin-bottom: 15px;
+}
+
+/* Styling for the button */
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Styling for the generated summary section */
+.summary-container {
+    width: 100%;
+    max-width: 700px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Using 'pre' tag to keep the AI's formatting (like line breaks) */
+pre {
+    white-space: pre-wrap; /* Allows text to wrap */
+    word-wrap: break-word;
+    font-size: 15px;
+    line-height: 1.6;
+}
