@@ -1,69 +1,154 @@
-/* General body styling */
+:root {
+    --primary-color: #007bff;
+    --primary-hover: #0056b3;
+    --bg-color: #f8f9fa;
+    --text-color: #333;
+    --card-bg: #ffffff;
+}
+
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background-color: #f4f7f6;
-    color: #333;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     margin: 0;
-    padding: 40px;
+    padding: 0;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
 }
 
-/* Styling for the main heading */
-h1 {
-    color: #005f73;
-}
-
-/* Styling for the form container */
-form {
+.container {
     width: 100%;
-    max-width: 700px;
+    max-width: 800px;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+header {
+    text-align: center;
     margin-bottom: 30px;
 }
 
-/* Styling for the text input box */
-textarea {
-    width: 100%;
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 16px;
-    box-sizing: border-box; /* Important for padding to work correctly */
-    margin-bottom: 15px;
+h1 {
+    color: #2c3e50;
+    margin-bottom: 10px;
 }
 
-/* Styling for the button */
-button {
-    background-color: #007bff;
-    color: white;
-    padding: 12px 20px;
-    border: none;
+.subtitle {
+    color: #6c757d;
+    font-size: 1.1rem;
+}
+
+textarea {
+    width: 100%;
+    min-height: 200px;
+    padding: 15px;
+    border: 1px solid #ced4da;
     border-radius: 8px;
-    cursor: pointer;
     font-size: 16px;
-    font-weight: bold;
+    font-family: inherit;
+    resize: vertical;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0,123,255,0.1);
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+button {
+    flex: 1;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 14px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
 }
 
 button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: var(--primary-hover);
 }
 
-/* Styling for the generated summary section */
-.summary-container {
-    width: 100%;
-    max-width: 700px;
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+.secondary-btn {
+    background-color: #6c757d;
 }
 
-/* Using 'pre' tag to keep the AI's formatting (like line breaks) */
-pre {
-    white-space: pre-wrap; /* Allows text to wrap */
-    word-wrap: break-word;
-    font-size: 15px;
+.secondary-btn:hover {
+    background-color: #5a6268;
+}
+
+.result-card {
+    background: var(--card-bg);
+    border: 1px solid #e9ecef;
+    border-radius: 10px;
+    padding: 25px;
+    margin-top: 30px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.card-header h2 {
+    font-size: 1.25rem;
+    margin: 0;
+    color: #2c3e50;
+}
+
+.copy-btn {
+    flex: none;
+    padding: 6px 12px;
+    font-size: 14px;
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.copy-btn:hover {
+    background-color: rgba(0,123,255,0.1);
+}
+
+/* Markdown Content Styling */
+.markdown-body h1, .markdown-body h2, .markdown-body h3 {
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+.markdown-body ul, .markdown-body ol {
+    padding-left: 20px;
+}
+
+.markdown-body p {
     line-height: 1.6;
+    margin-bottom: 1em;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px 15px;
+    }
+    
+    .button-group {
+        flex-direction: column;
+    }
 }
